@@ -1,7 +1,7 @@
 class Player
   attr_reader :name, :letter
 
-  def initialize
+  def initialize(input)
     @name = input.fetch(:name)
     @letter = input.fetch(:letter)
   end
