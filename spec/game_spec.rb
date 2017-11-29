@@ -40,4 +40,17 @@ RSpec.describe Game do
     end
   end
 
+  context "#get_number" do
+    it "converts human_move of '1' to [0, 0]" do
+      game = Game.new(players)
+      expect(game.get_number("1")).to eq [0, 0]
+    end
+
+    it "converts human_move of '7' to [2, 0]" do
+      game = Game.new(players)
+      expect(game.get_number("7")).to eq [2, 0]
+    end
+  end
+
+
 end
