@@ -8,21 +8,21 @@ RSpec.describe Game do
   let (:kd) { Player.new({ name: "kd", letter: "O" }) }
   let (:players) { [:steph, :kd]}
 
-  context "#initialize" do
-    it "randomly selects a current_player" do
-      players.stub(:shuffle) { [steph, kd] }
-      #players.shuffle { [steph, kd] }
-      game = Game.new([steph, kd])
-      expect(game.current_player).to eq steph
-    end
+#  context "#initialize" do
+#    it "randomly selects a current_player" do
+#      players.stub(:shuffle) { [steph, kd] }
+#      #players.shuffle { [steph, kd] }
+#      game = Game.new([steph, kd])
+#      expect(game.current_player).to eq steph
+#    end
 
-    it "randomly selects an other player" do
-      players.stub(:shuffle) { [steph, kd] }
-      #players.shuffle { [steph, kd] }
-      game = Game.new([steph, kd])
-      expect(game.other_player).to eq kd
-    end
-  end
+#    it "randomly selects an other player" do
+#      players.stub(:shuffle) { [steph, kd] }
+#      #players.shuffle { [steph, kd] }
+#      game = Game.new([steph, kd])
+#      expect(game.other_player).to eq kd
+#    end
+#  end
 
   context "#switch_players" do
     it "will set @current_player to @other_player" do
