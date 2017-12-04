@@ -15,7 +15,7 @@ class Game
     @current_player, @other_player = players.shuffle
   end
 
-  def get_number(one_through_nine = gets.chomp)
+  def get_number_from_player(one_through_nine = gets.chomp)
     get_coordinates(one_through_nine)
   end
 

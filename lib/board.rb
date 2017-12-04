@@ -11,4 +11,8 @@ class Board
     puts "#{cell[2][0]} | #{cell[2][1]} | #{cell[2][2]}"
   end
 
+  def change(x, y, letter)
+    cell[x][y] = letter
+  end
+
 end
