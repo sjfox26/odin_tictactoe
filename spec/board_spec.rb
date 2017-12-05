@@ -26,5 +26,13 @@ RSpec.describe Board do
     end
   end
 
+  context "#winner?" do
+    it "will return true if top row is all one letter" do
+      board = Board.new
+      board.cell = [["X", "X", "X"], ["O", "O", 6], [7, 8, 9]]
+      expect(board.winner?).to be_truthy
+    end
+  end
+
 
 end

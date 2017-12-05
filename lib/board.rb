@@ -15,4 +15,26 @@ class Board
     cell[x][y] = letter
   end
 
+  def winning_combos
+    [
+        cell[0],     #[1, 2, 3]      #across
+        cell[1],     #[4, 5, 6]
+        cell[2],     #[7, 8, 9]
+        cell.map {|row| row[0]},  #[1, 4, 7]    #down
+        cell.map {|row| row[1]},  #[2, 5, 8]
+        cell.map {|row| row[2]},  #[3, 6, 9]
+        [ cell[0][0], cell[1][1], cell[2][2]],  #[1, 5, 9]    #diagnols
+        [ cell[0][2], cell[1][1], cell[2][0]]   #[3, 5, 7]
+
+    ]
+  end
+
+
+  def winner?
+    winning_combos.each do |winning_combo|
+      return true if winning_combo.uniq.count == 1
+    end
+    false
+  end
+
 end
