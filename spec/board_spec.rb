@@ -32,6 +32,18 @@ RSpec.describe Board do
       board.cell = [["X", "X", "X"], ["O", "O", 6], [7, 8, 9]]
       expect(board.winner?).to be_truthy
     end
+
+    it "will return true if middle row is all one letter" do
+      board = Board.new
+      board.cell = [["X", 2, "X"], ["O", "O", "O"], [7, 8, 9]]
+      expect(board.winner?).to be_truthy
+    end
+
+    it "will return true if bottom row is all one letter" do
+      board = Board.new
+      board.cell = [[1, 2, 3], ["O", "O", 6], ["X", "X", "X"]]
+      expect(board.winner?).to be_truthy
+    end
   end
 
 
