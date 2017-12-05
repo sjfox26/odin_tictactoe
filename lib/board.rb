@@ -37,4 +37,11 @@ class Board
     false
   end
 
+  def draw?
+    draw_checker = cell.map { |element| element }
+    draw_checker.flatten!
+    return true if draw_checker.uniq.count == 2
+    false
+  end
+
 end

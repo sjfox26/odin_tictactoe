@@ -83,4 +83,18 @@ RSpec.describe Board do
     end
   end
 
+  context "#draw?" do
+    it "will return false if game is still in play with no winning combo reached" do
+      board = Board.new
+      board.cell = [["O", "X", "O"], ["O", "X", 6], ["X", "O", 9]]
+      expect(board.draw?).to be_falsey
+    end
+
+    it "will return true if game is a draw" do
+      board = Board.new
+      board.cell = [["O", "X", "O"], ["X", "O", "O"], ["X", "O", "X"]]
+      expect(board.draw?).to be_truthy
+    end
+  end
+
 end
