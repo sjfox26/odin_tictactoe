@@ -64,5 +64,16 @@ RSpec.describe Board do
     end
   end
 
+  it "will return true if diagnol top left to bottom right is all one letter" do
+    board = Board.new
+    board.cell = [["X", "O", "O"], ["O", "X", 6], ["X", 8, "X"]]
+    expect(board.winner?).to be_truthy
+  end
+
+  it "will return true if diagnol top right to bottom left is all one letter" do
+    board = Board.new
+    board.cell = [["X", "X", "O"], ["O", "O", 6], ["O", 8, "X"]]
+    expect(board.winner?).to be_truthy
+  end
 
 end
