@@ -62,18 +62,25 @@ RSpec.describe Board do
       board.cell = [[1, "O", "X"], ["X", "O", "X"], ["O", 8, "X"]]
       expect(board.winner?).to be_truthy
     end
-  end
 
-  it "will return true if diagnol top left to bottom right is all one letter" do
-    board = Board.new
-    board.cell = [["X", "O", "O"], ["O", "X", 6], ["X", 8, "X"]]
-    expect(board.winner?).to be_truthy
-  end
 
-  it "will return true if diagnol top right to bottom left is all one letter" do
-    board = Board.new
-    board.cell = [["X", "X", "O"], ["O", "O", 6], ["O", 8, "X"]]
-    expect(board.winner?).to be_truthy
+    it "will return true if diagnol top left to bottom right is all one letter" do
+      board = Board.new
+      board.cell = [["X", "O", "O"], ["O", "X", 6], ["X", 8, "X"]]
+      expect(board.winner?).to be_truthy
+    end
+
+    it "will return true if diagnol top right to bottom left is all one letter" do
+      board = Board.new
+      board.cell = [["X", "X", "O"], ["O", "O", 6], ["O", 8, "X"]]
+      expect(board.winner?).to be_truthy
+    end
+
+    it "will return false if no winner is reached" do
+      board = Board.new
+      board.cell = [["X", "O", "X"], ["X", "O", 6], ["O", "X", "O"]]
+      expect(board.winner?).to be_falsey
+    end
   end
 
 end
