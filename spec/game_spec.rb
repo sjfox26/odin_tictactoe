@@ -50,6 +50,19 @@ RSpec.describe Game do
       game = Game.new(players)
       expect(game.get_number_from_player("7")).to eq [2, 0]
     end
+
+    it "should call get_coordinates if number is in 1-9 range" do
+      game = Game.new(players)
+      expect(game).to receive(:get_coordinates)
+
+      game.get_number_from_player("9")
+    end
+
+    it "rejects any inputs not in 1-9 range" do
+      game = Game.new(players)
+      matrix_format_str = "Please enter a number 1-9\n"
+      expect { game.get_number_from_player("10") }.to output(matrix_format_str).to_stdout
+    end
   end
 
 

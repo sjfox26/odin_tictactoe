@@ -16,8 +16,14 @@ class Game
   end
 
   def get_number_from_player(one_through_nine = gets.chomp)
-    get_coordinates(one_through_nine)
+    one_through_nine_int = one_through_nine.to_i
+    if one_through_nine_int.between?(1,9)
+      get_coordinates(one_through_nine)
+    else
+      puts "Please enter a number 1-9"
+    end
   end
+
 
   def get_coordinates(one_through_nine)
     mapping = {
