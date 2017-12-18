@@ -17,6 +17,19 @@ RSpec.describe Board do
     end
   end
 
+  context "#spot_taken?" do
+    it "will return true if spot is taken" do
+      board = Board.new
+      board.cell = [["X", 2, "X"], ["O", "O", "O"], [7, 8, 9]]
+      expect(board.spot_taken?(0,2)).to be_truthy
+    end
+    it "will return false if spot is not taken" do
+      board = Board.new
+      board.cell = [["X", 2, "X"], ["O", "O", "O"], [7, 8, 9]]
+      expect(board.spot_taken?(0,1)).to be_falsey
+    end
+  end
+
   context "#change" do
     it "will change selected spot to @current_player's letter" do
       board = Board.new

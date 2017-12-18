@@ -8,21 +8,6 @@ RSpec.describe Game do
   let (:kd) { Player.new({ name: "kd", letter: "O" }) }
   let (:players) { [:steph, :kd]}
 
-#  context "#initialize" do
-#    it "randomly selects a current_player" do
-#      players.stub(:shuffle) { [steph, kd] }
-#      #players.shuffle { [steph, kd] }
-#      game = Game.new([steph, kd])
-#      expect(game.current_player).to eq steph
-#    end
-
-#    it "randomly selects an other player" do
-#      players.stub(:shuffle) { [steph, kd] }
-#      #players.shuffle { [steph, kd] }
-#      game = Game.new([steph, kd])
-#      expect(game.other_player).to eq kd
-#    end
-#  end
 
   context "#switch_players" do
     it "will set @current_player to @other_player" do
@@ -40,29 +25,12 @@ RSpec.describe Game do
     end
   end
 
-  context "#get_number_from_player" do
-    it "converts choice of '1' to coordinates [0, 0]" do
+  context "#send_input_to_be_mapped" do
+    it "returns an x and y when given a valid number" do
       game = Game.new(players)
-      expect(game.get_number_from_player("1")).to eq [0, 0]
+      expect(game.send_input_to_be_mapped("6")).to eq [1,2]
     end
 
-    it "converts choice of '7' to coordinates [2, 0]" do
-      game = Game.new(players)
-      expect(game.get_number_from_player("7")).to eq [2, 0]
-    end
-
-    it "should call get_coordinates if number is in 1-9 range" do
-      game = Game.new(players)
-      expect(game).to receive(:get_coordinates)
-
-      game.get_number_from_player("9")
-    end
-
-    it "rejects any inputs not in 1-9 range" do
-      game = Game.new(players)
-      matrix_format_str = "Please enter a number 1-9\n"
-      expect { game.get_number_from_player("10") }.to output(matrix_format_str).to_stdout
-    end
   end
 
 

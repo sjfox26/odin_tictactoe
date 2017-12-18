@@ -11,6 +11,15 @@ class Board
     puts "#{cell[2][0]} | #{cell[2][1]} | #{cell[2][2]}"
   end
 
+  def spot_taken?(x, y)
+    if cell[x][y] == "X" || cell[x][y] == "O"
+      taken = true
+    else
+      taken = false
+    end
+    taken
+  end
+
   def change(x, y, letter)
     cell[x][y] = letter
   end
