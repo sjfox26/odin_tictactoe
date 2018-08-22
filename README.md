@@ -1,7 +1,5 @@
 # odin_tictactoe
 
-![screen shot 2018-08-22 at 11 13 05 am](https://user-images.githubusercontent.com/23299983/44476623-fcb79a00-a5fd-11e8-85f6-b89313ef7367.png)
-
 ![screen shot 2018-08-22 at 11 21 47 am](https://user-images.githubusercontent.com/23299983/44476630-017c4e00-a5fe-11e8-9888-8104200159b2.png)
 
 ![screen shot 2018-08-22 at 11 22 29 am](https://user-images.githubusercontent.com/23299983/44476642-07722f00-a5fe-11e8-8b46-ab9580d9777b.png)
